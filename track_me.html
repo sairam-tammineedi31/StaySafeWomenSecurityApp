@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Me - Live Location Share</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Live Location Tracking</h2>
+    <p>Click the button below to generate your live location link:</p>
+    <button onclick="getLiveLocation()">Get Live Tracking Link</button>
+    <p id="linkArea"></p>
+
+    <script>
+    function getLiveLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var lat = position.coords.latitude;
+                var lon = position.coords.longitude;
+                var mapLink = `https://www.google.com/maps?q=${lat},${lon}`;
+                document.getElementById('linkArea').innerHTML = `<a href="${mapLink}" target="_blank">${mapLink}</a>`;
+            }, function() {
+                alert("Unable to get your current location.");
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+    </script>
+</body>
+</html>

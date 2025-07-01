@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scream Alarm - Stay Safe App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Scream Alarm - Emergency Sound Alert</h2>
+
+    <button onclick="playAlarm('woman')">🔊 Woman Scream</button>
+    <button onclick="playAlarm('man')">🔊 Man Scream</button>
+    <button onclick="playAlarm('siren')">🚨 Police Siren</button>
+    <button onclick="stopAlarm()">⏹️ Stop Sound</button>
+
+    <audio id="woman" src="audio/woman_scream.mp3"></audio>
+    <audio id="man" src="audio/man_scream.mp3"></audio>
+    <audio id="siren" src="audio/police_siren.mp3"></audio>
+
+    <script>
+        var currentAudio = null;
+
+        function playAlarm(type) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            currentAudio = document.getElementById(type);
+            currentAudio.volume = 1.0;
+            currentAudio.play();
+        }
+
+        function stopAlarm() {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>

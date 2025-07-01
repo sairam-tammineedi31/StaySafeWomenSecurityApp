@@ -1,0 +1,10 @@
+# Place this in StaySafeWomenSecurityApp/Dockerfile
+
+FROM nginx:alpine
+
+# Copy website files into nginx default html directory
+COPY . /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

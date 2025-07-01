@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Where Are You</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Where Are You?</h2>
+    <button onclick="getLocation()">Get My Location</button>
+    <p id="output"></p>
+
+    <script>
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(pos) {
+                var lat = pos.coords.latitude;
+                var lon = pos.coords.longitude;
+                document.getElementById('output').innerHTML = `<a href='https://www.google.com/maps?q=${lat},${lon}' target='_blank'>View My Location</a>`;
+            }, function() {
+                alert("Location error.");
+            });
+        } else {
+            alert("Geolocation not supported.");
+        }
+    }
+    </script>
+</body>
+</html>

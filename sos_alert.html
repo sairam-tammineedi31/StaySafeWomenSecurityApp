@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SOS Alert</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Emergency SOS Alert</h2>
+    <button onclick="triggerSOS()">Send SOS Alert</button>
+
+    <audio id="sosSound" src="https://www.soundjay.com/button/sounds/beep-07.mp3"></audio>
+
+    <script>
+    function triggerSOS() {
+        document.getElementById('sosSound').play();
+        alert("🚨 SOS ALERT SENT!");
+    }
+    </script>
+</body>
+</html>

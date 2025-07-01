@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fake Call Timer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Fake Call Timer</h2>
+    <input type="number" id="timer" placeholder="Seconds">
+    <button onclick="startFakeCall()">Start Fake Call</button>
+
+    <script>
+    function startFakeCall() {
+        var time = document.getElementById('timer').value;
+        if(time > 0){
+            alert("Fake call will appear in " + time + " seconds...");
+            setTimeout(function(){
+                alert("📞 Incoming Call: Mom ❤️");
+            }, time * 1000);
+        } else {
+            alert("Please enter a valid time.");
+        }
+    }
+    </script>
+</body>
+</html>
