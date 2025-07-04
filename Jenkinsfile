@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/StaySafeWomenSecurityApp.git'
+                git 'https://github.com/sairam-tammineedi31/StaySafeWomenSecurityApp.git'
             }
         }
         stage('Build Docker Image') {
